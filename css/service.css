@@ -1,0 +1,260 @@
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  background-color: white;
+  padding: 20px 30px;
+  color: black;
+  position: sticky;
+  top: 0px;
+  left: 0px;
+}
+.company-logo {
+  width: 70px;
+  margin-right: 20px;
+}
+.header-nav-list {
+  display: flex;
+  font-weight: bold;
+  list-style: none;
+}
+.header-nav-item:not(:last-child) {
+  margin-right: 30px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: rgb(80, 80, 80);
+}
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro",
+    "Yu Gothic Medium", "游ゴシック Medium", sans-serif;
+  line-height: 1.6;
+}
+.menu,
+.drawer-nav-in {
+  display: none;
+}
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: inline-block;
+    width: 36px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    z-index: 10;
+  }
+  .menu__line--top,
+  .menu__line--middle,
+  .menu__line--bottom {
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    position: absolute;
+    transition: 0.5s;
+  }
+  .menu__line--top {
+    top: 0;
+  }
+  .menu__line--middle {
+    top: 14px;
+  }
+  .menu__line--bottom {
+    bottom: 0;
+  }
+  .menu.open span:nth-of-type(1) {
+    top: 14px;
+    transform: rotate(45deg);
+  }
+  .menu.open span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .menu.open span:nth-of-type(3) {
+    top: 14px;
+    transform: rotate(-45deg);
+  }
+  .drawer-nav-in {
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background: white;
+    transition: 0.7s;
+    text-align: center;
+  }
+  .in {
+    transform: translateX(100%);
+  }
+  .drawer-nav-list {
+    padding-top: 80px;
+    text-align: center;
+  }
+  .drawer-nav-item {
+    list-style-type: none;
+    margin-top: 50px;
+  }
+  .header-nav-list {
+    display: none;
+  }
+  .drawer-nav-item {
+    margin-top: 40px;
+  }
+  .drawer-nav-link {
+    color: #0033cc;
+    font-size: 18px;
+  }
+}
+
+/*service eye-catch*/
+.service-eye-catch {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-image: url(../img/mv.png);
+  background-size: cover;
+  background-position: center;
+}
+.service-eye-catch__ttl {
+  font-size: 30px;
+  font-weight: bold;
+}
+/*service*/
+.service-wrap {
+  padding: 80px 0;
+  width: 85%;
+  margin: 0 auto;
+}
+.service-item {
+  padding: 20px 0;
+  border-top: 1px solid #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.service-item:last-child {
+  border-bottom: 1px solid #222;
+}
+.service-item__img {
+  width: 290px;
+}
+.service-item__pic {
+  width: 100%;
+  height: auto;
+}
+.service-item__text-box {
+  width: calc(100% - 330px);
+}
+.service-item__ttl {
+  font-size: 24px;
+  font-weight: bold;
+}
+/*フレキシブル*/
+@media screen and (max-width: 768px) {
+  .service-wrap {
+    width: 85%;
+    padding: 80px 0;
+  }
+  .service-item__img {
+    width: 100%;
+  }
+  .service-item__text-box {
+    width: 100%;
+  }
+}
+
+/*top-contact*/
+.top-contact__wrap {
+  background-color: #f5f6f9;
+  text-align: center;
+  padding: 80px 0;
+}
+.top-contact__text-box {
+  width: 85%;
+  margin: 0 auto;
+}
+.top-contact__ttl {
+  font-size: 30px;
+  font-weight: bold;
+}
+.top-contact__txt {
+  margin-top: 10px;
+}
+.top-contact-btn {
+  display: block;
+  width: 300px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #cd0224;
+  color: white;
+  margin: 40px auto 0;
+}
+.top-contact-btn:hover {
+  background-color: #b65061;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  .top-contact__text-box {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+/*footer*/
+.footer {
+  padding: 20px 0;
+  color: white;
+  background-color: #222;
+}
+.footer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  width: 85%;
+  margin: 0 auto;
+}
+.footer-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.footer-nav__link {
+  color: white;
+}
+.footer-nav__item:after {
+  content: "|";
+  display: inline-block;
+  padding: 0 10px;
+}
+.footer-nav__item:last-child:after {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .footer-wrap {
+    width: 85%;
+  }
+  .footer-copyright {
+    margin: 0 auto;
+  }
+  .footer-nav__item {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .footer-nav__item:after {
+    display: none;
+  }
+}
